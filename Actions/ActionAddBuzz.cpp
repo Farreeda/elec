@@ -1,6 +1,6 @@
 #include "ActionAddBuzz.h"
 #include "..\ApplicationManager.h"
-#include "../Components/Buzzer.h"
+
 
 ActionAddBuzz::ActionAddBuzz(ApplicationManager* pApp) :Action(pApp)
 {
@@ -16,7 +16,8 @@ void ActionAddBuzz::Execute()
 	UI* pUI = pManager->GetUI();
 
 
-	pUI->PrintMsg("Adding a new buzzer: Click anywhere to add");
+	pUI->PrintMsg("Add label to the buzzer");
+	zname = pUI->GetSrting();
 
 
 	pUI->GetPointClicked(Cx, Cy);
@@ -35,7 +36,7 @@ void ActionAddBuzz::Execute()
 	pGInfo->PointsList[1].x = Cx + compWidth / 2;
 	pGInfo->PointsList[1].y = Cy + compHeight / 2;
 
-	Buzzer* pR = new Buzzer(pGInfo);
+	Buzzer* pR = new Buzzer(pGInfo,zname);
 	pManager->AddComponent(pR);
 }
 

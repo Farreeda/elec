@@ -118,6 +118,8 @@
     <ClCompile Include="Actions\ActionAddfuse.cpp" />
     <ClCompile Include="Actions\ActionAddRes.cpp" />
     <ClCompile Include="Actions\ActionAddSwitch.cpp" />
+    <ClCompile Include="Actions\actionEditLabel.cpp" />
+    <ClCompile Include="Actions\Actionsave.cpp" />
     <ClCompile Include="ApplicationManager.cpp" />
     <ClCompile Include="CMUgraphicsLib\CMUgraphics.cpp" />
     <ClCompile Include="CMUgraphicsLib\colors.cpp" />
@@ -159,6 +161,7 @@
     <ClCompile Include="Components\Buzzer.cpp" />
     <ClCompile Include="Components\Component.cpp" />
     <ClCompile Include="Components\Connection.cpp" />
+    <ClCompile Include="Components\editlabel.cpp" />
     <ClCompile Include="Components\fuse.cpp" />
     <ClCompile Include="Components\Ground.cpp" />
     <ClCompile Include="Components\Resistor.cpp" />
@@ -176,6 +179,8 @@
     <ClInclude Include="Actions\ActionAddGround.h" />
     <ClInclude Include="Actions\ActionAddRes.h" />
     <ClInclude Include="Actions\ActionAddSwitch.h" />
+    <ClInclude Include="Actions\actionEditLabel.h" />
+    <ClInclude Include="Actions\ActionSave.h" />
     <ClInclude Include="ApplicationManager.h" />
     <ClInclude Include="CMUgraphicsLib\CMUgraphics.h" />
     <ClInclude Include="CMUgraphicsLib\colors.h" />
@@ -201,6 +206,7 @@
     <ClInclude Include="Components\Buzzer.h" />
     <ClInclude Include="Components\Component.h" />
     <ClInclude Include="Components\Connection.h" />
+    <ClInclude Include="Components\editlabel.h" />
     <ClInclude Include="Components\fuse.h" />
     <ClInclude Include="Components\Ground.h" />
     <ClInclude Include="Components\Resistor.h" />

@@ -1,6 +1,6 @@
 #include "ActionAddConnec.h"
 #include "..\ApplicationManager.h"
-#include "../Components/Connection.h"
+
 
 ActionAddConnec::ActionAddConnec(ApplicationManager* pApp) :Action(pApp)
 {
@@ -12,7 +12,7 @@ ActionAddConnec::~ActionAddConnec(void)
 
 void ActionAddConnec::Execute()
 {
-	Component* cmp1=nullptr;
+	Component* cmp1=NULL;
 	Component* cmp2=nullptr;
 	UI* pUI = pManager->GetUI();
 

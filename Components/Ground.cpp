@@ -1,15 +1,24 @@
 #include "Ground.h"
-
-Ground::Ground(GraphicsInfo* r_GfxInfo) :Component(r_GfxInfo)
-{}
+#include <iostream>
+#include <string>
+#include <fstream>
+Ground::Ground(GraphicsInfo* r_GfxInfo,string gname) :Component(r_GfxInfo)
+{
+	m_Label = gname;
+}
 
 void Ground::Draw(UI* pUI)
 {
-	pUI->DrawGround(*m_pGfxInfo);
+	pUI->DrawGround(*m_pGfxInfo,m_Label);
 
 }
 
 void Ground::Operate()
 {
 
+}
+
+void  Ground::savecommponnent(fstream& file) {
+
+	file << "Ground \t" << to_string(id) << "\t" << m_Label << "\t" << to_string(m_pGfxInfo->PointsList[0].x) << "\t" << to_string(m_pGfxInfo->PointsList[0].y);
 }

@@ -105,7 +105,8 @@ ActionType UI::GetUserAction() const
 			case ITM_BUZZ:	return ADD_BUZZER;
 			case ITM_FUSE:	return ADD_FUSE;
 			case ITM_CONNEC:	return ADD_CONNECTION;
-			
+			case ITM_SAVE:	return SAVE;
+			case ITM_EXIT:	return EXIT;
 			default: return DSN_TOOL;	//A click on empty place in desgin toolbar
 			}
 		}
@@ -196,6 +197,7 @@ void UI::CreateDesignToolBar()
 	MenuItemImages[ITM_SWITCH] = "Images\\Menu\\Menu_Switch.jpg";
 	MenuItemImages[ITM_GRND] = "Images\\Menu\\Menu_Ground.jpg";
 	MenuItemImages[ITM_FUSE] = "Images\\Menu\\Menu_Fuse.jpg";
+	MenuItemImages[ITM_SAVE] = "Images\\Menu\\Menu_save.jpg";
 	//TODO: Prepare image for each menu item and add it to the list
 
 	//Draw menu item one image at a time
@@ -223,7 +225,7 @@ void UI::CreateSimulationToolBar()
 //								Components Drawing Functions							//
 //======================================================================================//
 
-void UI::DrawResistor(const GraphicsInfo &r_GfxInfo, bool selected) const
+void UI::DrawResistor(const GraphicsInfo &r_GfxInfo,string b, bool selected) const
 {
 	string ResImage;
 	if(selected)	
@@ -233,9 +235,11 @@ void UI::DrawResistor(const GraphicsInfo &r_GfxInfo, bool selected) const
 
 	//Draw Resistor at Gfx_Info (1st corner)
 	pWind->DrawImage(ResImage, r_GfxInfo.PointsList[0].x, r_GfxInfo.PointsList[0].y, COMP_WIDTH, COMP_HEIGHT);
+	pWind->SetPen(BLUE);
+	pWind->DrawString(r_GfxInfo.PointsList[0].x + (COMP_WIDTH / 4) - 30, (r_GfxInfo.PointsList[0].y), b);
 }
 
-void UI::DrawBuzzer(const GraphicsInfo& r_GfxInfo, bool selected) const
+void UI::DrawBuzzer(const GraphicsInfo& r_GfxInfo,string b, bool selected) const
 {
 	string BuzzImage;
 	if (selected)
@@ -245,9 +249,12 @@ void UI::DrawBuzzer(const GraphicsInfo& r_GfxInfo, bool selected) const
 
 
 	pWind->DrawImage(BuzzImage, r_GfxInfo.PointsList[0].x, r_GfxInfo.PointsList[0].y, COMP_WIDTH, COMP_HEIGHT);
+	pWind->SetPen(BLUE);
+	pWind->DrawString(r_GfxInfo.PointsList[0].x + (COMP_WIDTH / 4) - 30, (r_GfxInfo.PointsList[0].y), b);
+
 }
 //TODO: Add similar functions to draw all other components
-void UI::DrawBulb(const GraphicsInfo& r_GfxInfo, bool selected,bool IsOn) const
+void UI::DrawBulb(const GraphicsInfo& r_GfxInfo,string b, bool selected,bool IsOn) const
 {
 	string BuzzImage;
 	if (selected && IsOn)
@@ -261,6 +268,8 @@ void UI::DrawBulb(const GraphicsInfo& r_GfxInfo, bool selected,bool IsOn) const
 
 
 	pWind->DrawImage(BuzzImage, r_GfxInfo.PointsList[0].x, r_GfxInfo.PointsList[0].y, COMP_WIDTH, COMP_HEIGHT);
+	pWind->SetPen(BLUE);
+	pWind->DrawString(r_GfxInfo.PointsList[0].x + (COMP_WIDTH / 4) - 30, (r_GfxInfo.PointsList[0].y), b);
 }
 
 
@@ -276,7 +285,7 @@ void UI::DrawConnection(const GraphicsInfo& r_GfxInfo, bool selected) const
 	
 }
 
-void UI::DrawBattery(const GraphicsInfo& r_GfxInfo, bool selected) const
+void UI::DrawBattery(const GraphicsInfo& r_GfxInfo,string bname, bool selected) const
 {
 	string BattImage;
 	if (selected)
@@ -286,6 +295,8 @@ void UI::DrawBattery(const GraphicsInfo& r_GfxInfo, bool selected) const
 
 	//Draw battery at Gfx_Info (1st corner)
 	pWind->DrawImage(BattImage, r_GfxInfo.PointsList[0].x, r_GfxInfo.PointsList[0].y, COMP_WIDTH, COMP_HEIGHT);
+	pWind->SetPen(BLUE);
+	pWind->DrawString(r_GfxInfo.PointsList[0].x + (COMP_WIDTH / 4) - 30, (r_GfxInfo.PointsList[0].y), bname);
 }
 
 
@@ -293,7 +304,7 @@ void UI::DrawBattery(const GraphicsInfo& r_GfxInfo, bool selected) const
 
 
 //the function which draws the ground
-void UI::DrawGround(const GraphicsInfo& r_GfxInfo, bool selected) const
+void UI::DrawGround(const GraphicsInfo& r_GfxInfo,string g, bool selected) const
 {
 	string GroundImage;
 	if (selected)
@@ -303,12 +314,11 @@ void UI::DrawGround(const GraphicsInfo& r_GfxInfo, bool selected) const
 
 	//Draw ground at Gfx_Info (1st corner)
 	pWind->DrawImage(GroundImage, r_GfxInfo.PointsList[0].x, r_GfxInfo.PointsList[0].y, COMP_WIDTH, COMP_HEIGHT);
+	pWind->SetPen(BLUE);
+	pWind->DrawString(r_GfxInfo.PointsList[0].x + (COMP_WIDTH / 4) - 30, (r_GfxInfo.PointsList[0].y), g);
 }
-UI::~UI()
-{
-	delete pWind;
-}
-void UI::DrawSwitch(const GraphicsInfo& r_GfxInfo, bool selected) const
+
+void UI::DrawSwitch(const GraphicsInfo& r_GfxInfo,string b, bool selected) const
 {
 	string SwitchImage;
 	if (selected)
@@ -317,8 +327,12 @@ void UI::DrawSwitch(const GraphicsInfo& r_GfxInfo, bool selected) const
 		SwitchImage = "Images\\Menu\\switchopen.jpg";	//use image of the open switch
 
 	pWind->DrawImage(SwitchImage, r_GfxInfo.PointsList[0].x, r_GfxInfo.PointsList[0].y, COMP_WIDTH, COMP_HEIGHT);
+	pWind->SetPen(BLUE);
+	pWind->DrawString(r_GfxInfo.PointsList[0].x + (COMP_WIDTH / 4) - 30, (r_GfxInfo.PointsList[0].y), b);
 }
-void UI::DrawFuse(const GraphicsInfo& r_GfxInfo, bool selected) const
+
+
+void UI::DrawFuse(const GraphicsInfo& r_GfxInfo,string f, bool selected) const
 {
 	string FuseImage;
 	if (selected)
@@ -328,4 +342,14 @@ void UI::DrawFuse(const GraphicsInfo& r_GfxInfo, bool selected) const
 
 	//Draw Resistor at Gfx_Info (1st corner)
 	pWind->DrawImage(FuseImage, r_GfxInfo.PointsList[0].x, r_GfxInfo.PointsList[0].y, COMP_WIDTH, COMP_HEIGHT);
+	pWind->SetPen(BLUE);
+	pWind->DrawString(r_GfxInfo.PointsList[0].x + (COMP_WIDTH / 4) - 30, (r_GfxInfo.PointsList[0].y), f);
 }
+
+
+
+UI::~UI()
+{
+	delete pWind;
+}
+

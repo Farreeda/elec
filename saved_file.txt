@@ -1,0 +1,23 @@
+Regsistor 	1	fd	123	322
+Regsistor 	2	asda	130	155
+Regsistor 	1	fdfd	114	281
+Regsistor 	2	dfdf	385	363
+Regsistor 	1	dfs	88	269
+Regsistor 	2	sdfs	280	587
+Regsistor 	1	kjk	133	304
+Regsistor 	1	456	96	277
+Regsistor 	2	321	208	550
+Regsistor 	0	456	34	243
+Regsistor 	0	456	34	243
+Regsistor 	0	54	39	231
+Regsistor 	1	654	8	420
+Regsistor 	0	456	71	300
+Regsistor 	1	456	53	445
+Regsistor 	0	123	164	258
+Regsistor 	1	2123	209	474
+Regsistor 	1	123	135	173
+Regsistor 	2	123	70	267
+Regsistor 	1	213	54	187
+Regsistor 	2		33	266
+Regsistor 	1	k	75	196
+Regsistor 	2	j	286	476

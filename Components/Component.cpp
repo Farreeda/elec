@@ -3,6 +3,8 @@
 Component::Component(GraphicsInfo *r_GfxInfo)
 {
 	m_pGfxInfo = r_GfxInfo;	
+	id=cid++; 
+	
 }
 
 Component::Component()
@@ -21,10 +23,17 @@ bool Component::IsInRegion(int m_x, int m_y) const {
 
 }
 
+void Component::set_label(string h) {
+	m_Label = h;
+}
 
+string Component::get_label() {
+	return m_Label;
+}
 
-Component::~Component()
-{
+Component::~Component() {
 
 }
 
+int Component::cid = 1;
+int Component::gitid() { return id; }

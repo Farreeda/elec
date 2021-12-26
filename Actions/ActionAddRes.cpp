@@ -1,5 +1,7 @@
 #include "ActionAddRes.h"
 #include "..\ApplicationManager.h"
+#include "..\Components\Component.h"
+
 
 ActionAddRes::ActionAddRes(ApplicationManager *pApp):Action(pApp)
 {
@@ -16,14 +18,14 @@ void ActionAddRes::Execute()
 	UI* pUI = pManager->GetUI();
 
 	//Print Action Message
-	pUI->PrintMsg("Adding a new resistor: Click anywhere to add");
+	pUI->PrintMsg("Add the label you want ");
+	rname = pUI->GetSrting();
 
 	//Get Center point of the area where the Comp should be drawn
 	pUI->GetPointClicked(Cx, Cy);
 
 	//Clear Status Bar
 	pUI->ClearStatusBar();	
-	
 	
 	GraphicsInfo * pGInfo= new GraphicsInfo(2); //Gfx info to be used to construct the Comp
 	
@@ -36,7 +38,7 @@ void ActionAddRes::Execute()
 	pGInfo->PointsList[1].x = Cx + compWidth/2;
 	pGInfo->PointsList[1].y = Cy + compHeight/2;
 	 
-	Resistor* pR = new Resistor(pGInfo);
+	Resistor* pR = new Resistor(pGInfo,rname);
 	pManager->AddComponent(pR);
 }
 

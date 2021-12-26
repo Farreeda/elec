@@ -1,0 +1,2 @@
+Regsistor 	1	hg	139	240
+Regsistor 	2	kj	110	418
