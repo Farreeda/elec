@@ -7,6 +7,7 @@
 #include"Actions/ActionAddGround.h"
 #include"Actions/ActionAddfuse.h"
 #include"Actions/ActionAddSwitch.h"
+#include "Actions/ActionSave.h"
 ApplicationManager::ApplicationManager()
 {
 	CompCount = 0;
@@ -64,6 +65,9 @@ void ApplicationManager::ExecuteAction(ActionType ActType)
 		case ADD_CONNECTION:
 			pAct = new ActionAddConnec(this);
 			break;
+		case SAVE:
+			pAct = new Actionsave(this);
+			break;
 
 
 
@@ -108,18 +112,30 @@ ApplicationManager::~ApplicationManager()
 	
 }
 
-bool ApplicationManager::ValidConnectionPoint(int x, int y, const Component* c1)  {
+bool ApplicationManager::ValidConnectionPoint(int x, int y,  Component* c1)  {
 	int c = 0;
 	for (int i = 0; i < CompCount; i++) {
 		if (CompList[i]->IsInRegion(x, y)) {
 			c1 = CompList[i];
 			c++;
+			return true;
 		}
 	}
-	if (c > 0)
-		return true;	
-	else
+	//if (c > 0)
+	//	return true;	
+	//else
 		return false;
 	
 	
+}
+void ApplicationManager::savefilrconnection(fstream& file) {
+	for (int i = 0;i < ConnCount;i++) {
+		ConnList[i]->saveconnection(file);
+	}
+}
+
+void  ApplicationManager::savefilecommponent(fstream& file) {
+	for (int i = 0;i < CompCount;i++) {
+		CompList[i]->savecommponnent(file);
+	}
 }

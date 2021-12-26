@@ -1,6 +1,6 @@
 #include "ActionAddBattery.h"
 #include "..\ApplicationManager.h"
-#include "../Components/Battery.h"
+#include "..\Components\Component.h"
 
 
 ActionAddBattery::ActionAddBattery(ApplicationManager* pApp) :Action(pApp)
@@ -19,8 +19,8 @@ void ActionAddBattery::Execute()
 	UI* pUI = pManager->GetUI();
 
 	//Print Action Message
-	pUI->PrintMsg("Adding a new battery: Click anywhere to add");
-
+	pUI->PrintMsg("Add the label of the battery");
+	bname = pUI->GetSrting();
 	//Get Center point of the area where the Comp should be drawn
 	pUI->GetPointClicked(Cx, Cy);
 
@@ -44,7 +44,7 @@ void ActionAddBattery::Execute()
 	pGInfo->PointsList[1].x = Cx + compWidth / 2;
 	pGInfo->PointsList[1].y = Cy + compHeight / 2;
 
-	Battery* pB = new Battery(pGInfo);
+	Battery* pB = new Battery(pGInfo,bname);
 	pManager->AddComponent(pB);
 }
 

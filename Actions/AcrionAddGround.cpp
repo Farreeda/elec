@@ -1,6 +1,6 @@
 #include "ActionAddGround.h"
 #include "..\ApplicationManager.h"
-#include "../Components/Ground.h"
+
 
 ActionAddGround::ActionAddGround(ApplicationManager* pApp) :Action(pApp)
 {
@@ -17,8 +17,8 @@ void ActionAddGround::Execute()
 	UI* pUI = pManager->GetUI();
 
 	//Print Action Message
-	pUI->PrintMsg("Adding a new ground: Click anywhere to add");
-
+	pUI->PrintMsg("label teh ground ");
+	gname = pUI->GetSrting();
 	//Get Center point of the area where the Comp should be drawn
 	pUI->GetPointClicked(Cx, Cy);
 
@@ -37,7 +37,7 @@ void ActionAddGround::Execute()
 	pGInfo->PointsList[1].x = Cx + compWidth / 2;
 	pGInfo->PointsList[1].y = Cy + compHeight / 2;
 
-	Ground* pG = new Ground(pGInfo);
+	Ground* pG = new Ground(pGInfo,gname);
 	pManager->AddComponent(pG);
 }
 

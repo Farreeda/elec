@@ -13,6 +13,7 @@ class Connection
 public:
 
 	Connection(GraphicsInfo *r_GfxInfo, Component *cmp1=nullptr, Component *cmp2=nullptr);
-	virtual void Draw(UI* );	
+	virtual void Draw(UI* );
+	void saveconnection(fstream &file);
 
 };

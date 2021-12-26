@@ -3,6 +3,7 @@
 #include "action.h"
 #include "..\Components\Ground.h"
 
+
 //Class responsible for adding a new gorur action
 class ActionAddGround : public Action
 {
@@ -11,7 +12,7 @@ private:
 	int Cx, Cy;	//Center point of the comp
 	int x1, y1, x2, y2;	//Two corners of the rectangluar area
 
-
+	string gname;
 
 public:
 	ActionAddGround(ApplicationManager* pApp);
