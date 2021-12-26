@@ -178,6 +178,7 @@
       <Filter>Components</Filter>
     </ClCompile>
     <ClCompile Include="Components\Buzzer.cpp">
+<<<<<<< Updated upstream
       <Filter>Components</Filter>
     </ClCompile>
     <ClCompile Include="Actions\Actionsave.cpp">
@@ -187,7 +188,12 @@
       <Filter>Actions</Filter>
     </ClCompile>
     <ClCompile Include="Components\editlabel.cpp">
+=======
+>>>>>>> Stashed changes
       <Filter>Components</Filter>
+    </ClCompile>
+    <ClCompile Include="Actions\Load.cpp">
+      <Filter>Actions</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -305,6 +311,7 @@
       <Filter>Components</Filter>
     </ClInclude>
     <ClInclude Include="Components\Buzzer.h">
+<<<<<<< Updated upstream
       <Filter>Components</Filter>
     </ClInclude>
     <ClInclude Include="Actions\ActionSave.h">
@@ -314,7 +321,12 @@
       <Filter>Actions</Filter>
     </ClInclude>
     <ClInclude Include="Components\editlabel.h">
+=======
+>>>>>>> Stashed changes
       <Filter>Components</Filter>
+    </ClInclude>
+    <ClInclude Include="Actions\Load.h">
+      <Filter>Actions</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

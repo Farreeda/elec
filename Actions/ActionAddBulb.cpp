@@ -1,6 +1,10 @@
 #include "ActionAddBulb.h"
 #include "..\ApplicationManager.h"
+<<<<<<< Updated upstream:Actions/ActionAddBulb.cpp
 
+=======
+#include "../Components/Bulb.h"
+>>>>>>> Stashed changes:ActionAddBulb.cpp
 ActionAddBulb::ActionAddBulb(ApplicationManager* pApp) :Action(pApp)
 {
 }
@@ -35,10 +39,10 @@ void ActionAddBulb::Execute()
 	pGInfo->PointsList[1].x = Cx + compWidth / 2;
 	pGInfo->PointsList[1].y = Cy + compHeight / 2;
 	pUI->PrintMsg("Is the bulb on or off? <y/n>");
-	addIsOnS=pUI->GetSrting();
+	addIsOnS=pUI->GetString();
 	while ((addIsOnS != "y") && (addIsOnS != "n")) 
 	{pUI->PrintMsg("Error!!! Enter 'y' for yes and 'n' for no.");
-	addIsOnS = pUI->GetSrting();
+	addIsOnS = pUI->GetString();
 	};
 	if (addIsOnS == "y")
 	{
@@ -50,7 +54,7 @@ void ActionAddBulb::Execute()
 		addIsOn = false;
 		pUI->PrintMsg("Creating an off bulb");
 	}
-	Bulb* pR = new Bulb(pGInfo,addIsOn);
+	Bulb* pR = new Bulb(pGInfo);
 	pManager->AddComponent(pR);
 }
 

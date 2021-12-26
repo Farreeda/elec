@@ -3,9 +3,10 @@
 
 class Buzzer :public Component
 {
+	Resistor internalres;
 public:
-	Buzzer(GraphicsInfo* r_GfxInfo,string b);
+	Buzzer(GraphicsInfo* r_GfxInfo);
 	virtual void Operate();
 	virtual void Draw(UI*);
-	virtual void savecommponnent(fstream& file);
+	virtual void Load(string label, int value);
 };

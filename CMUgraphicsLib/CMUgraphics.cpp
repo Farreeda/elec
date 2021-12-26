@@ -238,8 +238,8 @@ window::window(const int iWindWidth, const int iWindHeight, const int iWindXPos,
 
 	bDoubleBuffer = false;
 
-	SetPen(WHITE, 0);
-	SetBrush(WHITE);
+	SetPen(VIOLET, 0);
+	SetBrush(VIOLET);
 	SetFont(10, PLAIN, SWISS);
 
 	if (wipInput == NULL) {
@@ -404,8 +404,8 @@ bool window::SetBuffering(const bool bSetting) {
 			bmapBufferOld = (HBITMAP)SelectObject(dcActive, bmapBuffer);
 		}
 
-		SetPen(WHITE);
-		SetBrush(WHITE);
+		SetPen(VIOLET);
+		SetBrush(VIOLET);
 		DrawRectangle(0, 0, iWindowWidth - 1, iWindowHeight - 1);
 
 	}

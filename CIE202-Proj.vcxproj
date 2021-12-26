@@ -81,6 +81,7 @@
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
+      <LanguageStandard>stdcpp14</LanguageStandard>
     </ClCompile>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -118,8 +119,12 @@
     <ClCompile Include="Actions\ActionAddfuse.cpp" />
     <ClCompile Include="Actions\ActionAddRes.cpp" />
     <ClCompile Include="Actions\ActionAddSwitch.cpp" />
+<<<<<<< Updated upstream
     <ClCompile Include="Actions\actionEditLabel.cpp" />
     <ClCompile Include="Actions\Actionsave.cpp" />
+=======
+    <ClCompile Include="Actions\Load.cpp" />
+>>>>>>> Stashed changes
     <ClCompile Include="ApplicationManager.cpp" />
     <ClCompile Include="CMUgraphicsLib\CMUgraphics.cpp" />
     <ClCompile Include="CMUgraphicsLib\colors.cpp" />
@@ -161,7 +166,10 @@
     <ClCompile Include="Components\Buzzer.cpp" />
     <ClCompile Include="Components\Component.cpp" />
     <ClCompile Include="Components\Connection.cpp" />
+<<<<<<< Updated upstream
     <ClCompile Include="Components\editlabel.cpp" />
+=======
+>>>>>>> Stashed changes
     <ClCompile Include="Components\fuse.cpp" />
     <ClCompile Include="Components\Ground.cpp" />
     <ClCompile Include="Components\Resistor.cpp" />
@@ -179,8 +187,12 @@
     <ClInclude Include="Actions\ActionAddGround.h" />
     <ClInclude Include="Actions\ActionAddRes.h" />
     <ClInclude Include="Actions\ActionAddSwitch.h" />
+<<<<<<< Updated upstream
     <ClInclude Include="Actions\actionEditLabel.h" />
     <ClInclude Include="Actions\ActionSave.h" />
+=======
+    <ClInclude Include="Actions\Load.h" />
+>>>>>>> Stashed changes
     <ClInclude Include="ApplicationManager.h" />
     <ClInclude Include="CMUgraphicsLib\CMUgraphics.h" />
     <ClInclude Include="CMUgraphicsLib\colors.h" />
@@ -206,7 +218,10 @@
     <ClInclude Include="Components\Buzzer.h" />
     <ClInclude Include="Components\Component.h" />
     <ClInclude Include="Components\Connection.h" />
+<<<<<<< Updated upstream
     <ClInclude Include="Components\editlabel.h" />
+=======
+>>>>>>> Stashed changes
     <ClInclude Include="Components\fuse.h" />
     <ClInclude Include="Components\Ground.h" />
     <ClInclude Include="Components\Resistor.h" />

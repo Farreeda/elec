@@ -16,9 +16,15 @@ void ActionAddfuse::Execute()
 	UI* pUI = pManager->GetUI();
 
 	//Print Action Message
+<<<<<<< Updated upstream
 	pUI->PrintMsg("Add a label to the fuse");
 	fname = pUI->GetSrting();
 	//Get Center point of the area where the Comp should be drawnf
+=======
+	pUI->PrintMsg("Adding a new resistor: Click anywhere to add");
+
+	//Get Center point of the area where the Comp should be drawn
+>>>>>>> Stashed changes
 	pUI->GetPointClicked(Cx, Cy);
 
 	//Clear Status Bar
@@ -36,7 +42,11 @@ void ActionAddfuse::Execute()
 	pGInfo->PointsList[1].x = Cx + compWidth / 2;
 	pGInfo->PointsList[1].y = Cy + compHeight / 2;
 
+<<<<<<< Updated upstream
 	fuse* pR = new fuse(pGInfo,fname);
+=======
+	fuse* pR = new fuse(pGInfo);
+>>>>>>> Stashed changes
 	pManager->AddComponent(pR);
 }
 

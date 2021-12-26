@@ -5,11 +5,11 @@ UI::UI()
 	AppMode = DESIGN;	//Design Mode is the startup mode
 
 	//Initilaize interface colors
-	DrawColor = BLACK;
+	DrawColor = VIOLET;
 	SelectColor = BLUE;
-	ConnColor = RED;
-	MsgColor = BLUE;
-	BkGrndColor = WHITE;
+	ConnColor = CYAN;
+	MsgColor = WHITE;
+	BkGrndColor =VIOLET;
 	
 	//Create the drawing window
 	pWind = new window(width, height, wx, wy);	
@@ -41,7 +41,7 @@ void UI::GetPointClicked(int &x, int &y)
 	pWind->WaitMouseClick(x, y);	//Wait for mouse click
 }
 
-string UI::GetSrting()
+string UI::GetString()
 {
 	//Reads a complete string from the user until the user presses "ENTER".
 	//If the user presses "ESCAPE". This function should return an empty string.
@@ -105,8 +105,12 @@ ActionType UI::GetUserAction() const
 			case ITM_BUZZ:	return ADD_BUZZER;
 			case ITM_FUSE:	return ADD_FUSE;
 			case ITM_CONNEC:	return ADD_CONNECTION;
+<<<<<<< Updated upstream
 			case ITM_SAVE:	return SAVE;
 			case ITM_EXIT:	return EXIT;
+=======
+			case ITM_LOAD:       return LOAD;
+>>>>>>> Stashed changes
 			default: return DSN_TOOL;	//A click on empty place in desgin toolbar
 			}
 		}
@@ -153,7 +157,7 @@ void UI::PrintMsg(string msg) const
 	int MsgY = StatusBarHeight - 10;
 
 	// Print the Message
-    pWind->SetFont(20, BOLD | ITALICIZED, BY_NAME, "Arial"); 
+    pWind->SetFont(30, BOLD | ITALICIZED, BY_NAME, "Gunplay"); 
 	pWind->SetPen(MsgColor); 
 	pWind->DrawString(MsgX, height - MsgY, msg);
 }
@@ -173,8 +177,8 @@ void UI::ClearStatusBar()const
 //Clears the drawing (degin) area
 void UI::ClearDrawingArea() const
 {
-	pWind->SetPen(RED, 1);
-	pWind->SetBrush(WHITE);
+	pWind->SetPen(VIOLET, 1);
+	pWind->SetBrush(VIOLET);
 	pWind->DrawRectangle(0, ToolBarHeight, width, height - StatusBarHeight);
 	
 }
@@ -197,8 +201,13 @@ void UI::CreateDesignToolBar()
 	MenuItemImages[ITM_SWITCH] = "Images\\Menu\\Menu_Switch.jpg";
 	MenuItemImages[ITM_GRND] = "Images\\Menu\\Menu_Ground.jpg";
 	MenuItemImages[ITM_FUSE] = "Images\\Menu\\Menu_Fuse.jpg";
+<<<<<<< Updated upstream
 	MenuItemImages[ITM_SAVE] = "Images\\Menu\\Menu_save.jpg";
 	//TODO: Prepare image for each menu item and add it to the list
+=======
+	MenuItemImages[ITM_LOAD] = "Images\\Menu\\Load.jpg";
+		//TODO: Prepare image for each menu item and add it to the list
+>>>>>>> Stashed changes
 
 	//Draw menu item one image at a time
 	for(int i=0; i<ITM_DSN_CNT; i++)
@@ -277,9 +286,9 @@ void UI::DrawBulb(const GraphicsInfo& r_GfxInfo,string b, bool selected,bool IsO
 void UI::DrawConnection(const GraphicsInfo& r_GfxInfo, bool selected) const
 {
 	if (selected)
-		pWind->SetPen(RED, 6);
+		pWind->SetPen(BLACK, 6);
 	else
-		pWind->SetPen(BLACK, 5);
+		pWind->SetPen(BLUE, 5);
 	
 	pWind->DrawLine(r_GfxInfo.PointsList[0].x, r_GfxInfo.PointsList[0].y, r_GfxInfo.PointsList[1].x, r_GfxInfo.PointsList[1].y, FRAME);
 	
@@ -352,4 +361,28 @@ UI::~UI()
 {
 	delete pWind;
 }
+<<<<<<< Updated upstream
 
+=======
+void UI::DrawSwitch(const GraphicsInfo& r_GfxInfo, bool selected) const
+{
+	string SwitchImage;
+	if (selected)
+		SwitchImage = "Images\\Comp\\Switchclosed.jpg";	//use image of closed switch
+	else
+		SwitchImage = "Images\\Comp\\switchopen.jpg";	//use image of the open switch
+
+	pWind->DrawImage(SwitchImage, r_GfxInfo.PointsList[0].x, r_GfxInfo.PointsList[0].y, COMP_WIDTH, COMP_HEIGHT);
+}
+void UI::DrawFuse(const GraphicsInfo& r_GfxInfo, bool selected) const
+{
+	string FuseImage;
+	if (selected)
+		FuseImage = "Images\\Comp\\coloredfuse.jpg";	//use image of highlighted fuse
+	else
+		FuseImage = "Images\\Comp\\fuse.jpg";	//use image of the normal fuse
+
+	//Draw Resistor at Gfx_Info (1st corner)
+	pWind->DrawImage(FuseImage, r_GfxInfo.PointsList[0].x, r_GfxInfo.PointsList[0].y, COMP_WIDTH, COMP_HEIGHT);
+}
+>>>>>>> Stashed changes

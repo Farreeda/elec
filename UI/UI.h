@@ -46,7 +46,11 @@ class UI
 		ITM_BUZZ,
 		ITM_FUSE,
 		ITM_CONNEC,
+<<<<<<< Updated upstream
 		ITM_SAVE,
+=======
+		ITM_LOAD,
+>>>>>>> Stashed changes
 
 		ITM_EXIT,		//Exit item
 		//TODO: Add more items names here
@@ -100,7 +104,7 @@ public:
 	
 	// Input Functions  ---------------------------
 	void GetPointClicked(int &, int &);	//Get coordinate where user clicks
-	string GetSrting();		//Returns a string entered by the user
+	string GetString();		//Returns a string entered by the user
 
 	ActionType GetUserAction() const; //Reads the user click and maps it to an action
 
@@ -117,6 +121,7 @@ public:
 
 		
 	// Draws a resistor
+<<<<<<< Updated upstream
 	void DrawResistor(const GraphicsInfo &r_GfxInfo,string b, bool selected = false) const;
 	void DrawBuzzer(const GraphicsInfo& r_GfxInfo, string b, bool selected = false) const;
 	void DrawBulb(const GraphicsInfo& r_GfxInfo, string b, bool selected = false,bool IsOn=true) const;
@@ -124,6 +129,15 @@ public:
 	void DrawGround(const GraphicsInfo& r_GfxInfo, string b, bool selected=false) const;
 	void DrawSwitch(const GraphicsInfo& r_GfxInfo, string b, bool selected=false) const;
 	void DrawFuse(const GraphicsInfo& r_GfxInfo, string b, bool selected=false) const;
+=======
+	void DrawResistor(const GraphicsInfo &r_GfxInfo, bool selected = false) const;
+	void DrawBuzzer(const GraphicsInfo& r_GfxInfo, bool selected = false) const;
+	void DrawBulb(const GraphicsInfo& r_GfxInfo, bool selected = false,bool IsOn=true) const;
+	void DrawBattery(const GraphicsInfo& r_GfxInfo, bool selected=false) const;
+	void DrawGround(const GraphicsInfo& r_GfxInfo, bool selected=false) const;
+	void DrawSwitch(const GraphicsInfo& r_GfxInfo, bool selected=false) const;
+	void DrawFuse(const GraphicsInfo& r_GfxInfo, bool selected=false) const;
+>>>>>>> Stashed changes
 	///TODO: Make similar functions for drawing all other components, connections, .. etc
 
 	// Draws Connection

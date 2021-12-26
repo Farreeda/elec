@@ -29,7 +29,11 @@ void ActionAddBattery::Execute()
 
 	pUI->PrintMsg("enter the volt of the battery");
 
+<<<<<<< Updated upstream
 	string vol = pUI->GetSrting();   //get the voltage of the battery 
+=======
+	string vol = pUI->GetString();   //get the voltage of the battery 
+>>>>>>> Stashed changes
 	//double volt = stod(vol);
 	pUI->ClearStatusBar();
 

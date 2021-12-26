@@ -1,6 +1,10 @@
 #include "ActionAddBuzz.h"
 #include "..\ApplicationManager.h"
+<<<<<<< Updated upstream:Actions/ActionAddBuzz.cpp
 
+=======
+#include "../Components/Buzzer.h"
+>>>>>>> Stashed changes:ActionAddBuzz.cpp
 
 ActionAddBuzz::ActionAddBuzz(ApplicationManager* pApp) :Action(pApp)
 {

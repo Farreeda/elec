@@ -1,6 +1,12 @@
 #include "ActionAddConnec.h"
+<<<<<<< Updated upstream:Actions/ActionAddConnec.cpp
 #include "..\ApplicationManager.h"
 
+=======
+#include "../ApplicationManager.h"
+#include "../Components/Connection.h"
+#include"../UI/UI.h"
+>>>>>>> Stashed changes:ActionAddConnec.cpp
 
 ActionAddConnec::ActionAddConnec(ApplicationManager* pApp) :Action(pApp)
 {
@@ -66,6 +72,10 @@ void ActionAddConnec::Execute()
 	pUI->ClearStatusBar();
 
 	Connection* pR = new Connection(pGInfo,cmp1,cmp2);
+		cmp1->addTerm2Conn(pR);
+	
+		cmp2->addTerm2Conn(pR);
+	
 	pManager->AddConnection(pR);
 }
 

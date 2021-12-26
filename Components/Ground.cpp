@@ -17,8 +17,13 @@ void Ground::Operate()
 {
 
 }
+<<<<<<< Updated upstream
 
 void  Ground::savecommponnent(fstream& file) {
 
 	file << "Ground \t" << to_string(id) << "\t" << m_Label << "\t" << to_string(m_pGfxInfo->PointsList[0].x) << "\t" << to_string(m_pGfxInfo->PointsList[0].y);
+=======
+void Ground::Load(string label, int value) {
+	setlabel(label);
+>>>>>>> Stashed changes
 }

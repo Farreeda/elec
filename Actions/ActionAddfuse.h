@@ -1,5 +1,9 @@
 #pragma once
+<<<<<<< Updated upstream
 
+=======
+#pragma once
+>>>>>>> Stashed changes
 
 #include "Action.h"
 #include "../Components/Fuse.h"
@@ -12,7 +16,10 @@ private:
 	//Parameters for rectangular area to be occupied by the comp
 	int Cx, Cy;	//Center point of the comp
 	int x1, y1, x2, y2;	//Two corners of the rectangluar area
+<<<<<<< Updated upstream
 	string fname;
+=======
+>>>>>>> Stashed changes
 public:
 	ActionAddfuse(ApplicationManager* pApp);
 	virtual ~ActionAddfuse(void);
